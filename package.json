@@ -1,17 +1,18 @@
 {
   "name": "sine-waves",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Generate multiple configurable sine waves",
-  "homepage": "https://github.com/isuttell/sine-waves",
+  "homepage": "https://github.com/alecmarcus/sine-waves",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isuttell/sine-waves.git"
+    "url": "git+https://github.com/alecmarcus/sine-waves.git"
   },
   "scripts": {
     "test": "grunt test"
   },
   "contributors": [
-    "Isaac Suttell <isaac@isaacsuttell.com>"
+    "Isaac Suttell <isaac@isaacsuttell.com>",
+    "Alec Marcus <alec@alemcarc.us>"
   ],
   "devDependencies": {
     "codeclimate-test-reporter": "0.0.4",
@@ -39,7 +40,7 @@
     "karma-story-reporter": "~0.2.2"
   },
   "bugs": {
-    "url": "https://github.com/isuttell/sine-waves/issues"
+    "url": "https://github.com/alecmarcus/sine-waves/issues"
   },
   "main": "sine-waves.js",
   "directories": {

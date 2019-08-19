@@ -494,6 +494,7 @@ var defaultWave = {
   wavelength: 50,
   segmentLength: 10,
   lineWidth: 1,
+  shift: 0,
   strokeStyle: 'rgba(255, 255, 255, 0.2)',
   type: 'Sine'
 };
@@ -665,8 +666,10 @@ SineWaves.prototype.drawWave = function(time, options) {
   this.ctx.beginPath();
 
   // Starting Line
-  this.ctx.moveTo(0, this.yAxis);
-  this.ctx.lineTo(this.waveLeft, this.yAxis);
+  let shiftedYAx = this.yAxis + options.shift
+
+  this.ctx.moveTo(0, shiftedYAx);
+  this.ctx.lineTo(this.waveLeft, shiftedYAx);
 
   var i;
   var point;
@@ -676,7 +679,7 @@ SineWaves.prototype.drawWave = function(time, options) {
     point = this.getPoint(time, i, options);
 
     // Draw to it
-    this.ctx.lineTo(point.x, point.y);
+    this.ctx.lineTo(point.x, (point.y + options.shift));
 
     // Clean up
     point = void 0;
@@ -687,7 +690,7 @@ SineWaves.prototype.drawWave = function(time, options) {
   options = void 0;
 
   // Ending Line
-  this.ctx.lineTo(this.width, this.yAxis);
+  this.ctx.lineTo(this.width, shiftedYAx);
 
   // Stroke it
   this.ctx.stroke();
